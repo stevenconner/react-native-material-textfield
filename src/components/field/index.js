@@ -511,7 +511,7 @@ export default class TextField extends PureComponent {
         <Animated.View {...inputContainerProps}>
           {disabled && <Line {...lineProps} />}
 
-          <Label {...labelProps}>{label}</Label>
+          <Label {...labelProps} allowFontScaling={false}>{label}</Label>
 
           <View style={styles.row}>
             {this.renderAffix('prefix', active, focused)}
@@ -530,6 +530,7 @@ export default class TextField extends PureComponent {
               onBlur={this.onBlur}
               value={value}
               ref={this.updateRef}
+              allowFontScaling={false}
             />
 
             {this.renderAffix('suffix', active, focused)}
